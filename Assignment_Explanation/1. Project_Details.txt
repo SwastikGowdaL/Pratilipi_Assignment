@@ -2,7 +2,7 @@ Short Description -
 1. I have created three microservices - Content_Service, User_Interaction_Service, Users_Service.
 2. Adopted the separation of concerns pattern for all microservices, for modularity, reusability, maintainability purposes, etc..,
 3. Exposed API endpoints for communicating with the microservices.(Code for the API endpoints can be found in the routers.)
-4. Used eslint to write clean code and avoid potential code smells and because of good variable naming, most of the code is pretty much self explanatory eliminating the need for comments.
+4. Used eslint to write clean code and avoid potential code smells and because of good variable naming, most of the code is pretty much self explanatory, eliminating the need for comments.
 5. I have used one of the most popular document-based NoSQL databases, which provides us with a lot of flexibility and has rich features built-in for performing DB operations.
 6. Created two collections (Contents, Users) - Contents for storing content details like title,userID, story & published date, etc.., and Users for storing user details like the first name, last name, email, phone number, etc..,
 7. Defined Schema for these collections using mongoose(ODM).

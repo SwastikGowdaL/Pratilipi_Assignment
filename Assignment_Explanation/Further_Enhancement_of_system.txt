@@ -1,0 +1,23 @@
+This file touches on the topic of, when our system will start to break and how I would go about enhancing/improving, or scaling the system.
+
+Following are a few scenarios of when our system will start to break:
+1. The system I have built can scale up to some extent because I have used good design patterns/ architecture, it can handle up to somewhere around 10k req/sec(not tested)(needs to be tested using load/stress testing tools like k6/Jmetre), but if the traffic goes beyond that then our system will eventually break.
+2. If there are too many DB operations, then the performance will start decreasing.
+3. If there is heavy traffic routed to only one service, then there will be a huge amount of latency in serving the requests.
+4. If the errors are not logged and the system is not monitored, we will lose the observability of the system and will not be able to tune it for better performance.
+5. If no robust security mechanisms are employed, then our system will be vulnerable to many attacks.
+6. If our system is not tested extensively, then there is no guarantee that our system is resilient and fault-tolerant.    
+
+Following are the few things I would consider for enhancing/improving or scaling the system:
+1. I would write many test cases, including unit/integration tests and e2e tests using tools like jest cypress.
+2. If the traffic starts increasing gradually then I would start vertically scaling the system, by adding more resources to existing servers up to a certain extent because there is a h/w limit.
+3. If there is even more traffic then I will horizontally scale by adding more servers and since we already adopted microservices architecture, scaling only specific services will not be an issue and I would implement a load balancer to distribute the load equally.
+4. I would look into various microservices interaction patterns like aggregator pattern, asynchronous messaging, circuit breaker, etc.., and would choose best based on the context.
+5. If there is a need for faster data access I would cache using Redis.
+6. For efficient DB operations I will consider writing more efficient queries and indexing and then partitioning, replication or sharding if needed.
+7. Extensively use message brokers like rabbitmq or Kafka for performing various kinds of asynchronous operations.
+8. Configure DB backup, in case we lose the data.
+9. For security purposes I might use hashing/encryption and auth libraries, API keys, rate limiters, firewalls.
+10. For hosting I would opt mature hosting platforms like AWS/GCP/Azure and for CI/CD I would use git/GitHub, circleCI/Jenkins, Docker along with Kubernetes.
+11. For logging, I will consider using datadog or Winston and morgan and for monitoring, I might consider using Prometheus or all together ELK stack.
+12. To improve the communication between our frontend and backend, I might consider using other connection patterns like socket connection or grpc or graphql and might try to implement http2, all based on the context though.

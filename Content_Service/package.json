@@ -1,0 +1,32 @@
+{
+  "name": "content-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "consumer": "nodemon ./content_service_component/helpers/consumer.js",
+    "publisher": "nodemon ./content_service_component/helpers/publisher.js",
+    "all": "npm-run-all --parallel start consumer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6",
+    "amqplib": "^0.8.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "mongodb": "^3.3.3",
+    "mongoose": "^6.1.6",
+    "multer": "^1.4.4",
+    "nanoid": "^3.1.31"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5"
+  }
+}

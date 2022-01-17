@@ -1,0 +1,39 @@
+Note - 
+Node and Docker should be installed.
+Make sure to close all the other open applications since this requires lot of system resources 
+
+system requirements - 
+AMD Ryzen 3/Intel i3 or above processors
+8-16gb of RAM
+decent storage
+
+steps to execute -
+
+step 1-navigate to Content_Service folder and run "docker-compose -f docker-compose.yml up", wait for some time!
+step 2-make sure that all the containers(mongodb,mongo-express,rabbitmq) included in docker-compose.yml are up and running 
+
+content service -
+step 1- navigate to Content_Service folder
+step 2- npm install
+step 3- npm run all
+API Doc - https://documenter.getpostman.com/view/14691472/UVXjLGhq
+
+user interaction service -
+step 1- navigate to the User_Interaction_Service folder
+step 2- npm install
+step 3- npm run start
+API Doc - https://documenter.getpostman.com/view/14691472/UVXjLGhs
+note - make sure that the content service is running, since this microservice communicates with it for some operations
+
+users service -
+step 1- navigate to the Users_Service folder
+step 2- npm install
+step 3- npm run start
+API Doc - https://documenter.getpostman.com/view/14691472/UVXjLGht
+
+Note-
+I have included the Dockerfile for all the services, but I could not test it due to my limited system resource, when I built and ran the containers, my system started breaking, so I recommend the above method for running the server.
+
+If there are any queries please feel free to contact me at swastik7999@gmail.com
+
+
